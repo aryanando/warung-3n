@@ -43,28 +43,28 @@ document.getElementById("default-search")
                     items.forEach(element => {
                         document.getElementById("item-container").innerHTML += (`<div class="mt-3">
                         <div
-                            class="p-4 mx-auto text-center bg-white border-indigo-500 rounded shadow h-36 w-96 dark:bg-gray-800">
+                            class="p-4 mx-auto text-center bg-white border-indigo-500 rounded shadow h-36 w-96 ">
                             <div class="flex items-center justify-between h-full">
                                 <div class="flex flex-col justify-between h-full">
                                     <div class=" p-3 border rounded-xl">
-                                        <span class="dark:text-white text-xl">
+                                        <span class="text-xl">
                                             `+element.name+`
                                         </span>
                                     </div>
                                     <div class=" p-3">
-                                        <span class="dark:text-white text-xs ">
+                                        <span class="text-xs ">
                                             <a class="text-blue-600" href='/item/update/`+element.id+`'>Edit</a>
                                         </span>
                                     </div>
                                     <div class="text-xs">
-                                        <span class="mb-0 text-left text-gray-500 dark:text-gray-300">
+                                        <span class="mb-0 text-left text-gray-500 ">
                                             Last Update :
                                         </span>
                                         <span>`+element.updated_at+`</span>
                                     </div>
                                 </div>
                                 <div class="flex flex-col justify-between h-full">
-                                    <p class="text-2xl font-bold text-gray-900 dark:text-white">
+                                    <p class="text-2xl font-bold text-gray-900 ">
                                         <span class="text-sm">
                                             Rp.
                                         </span>
@@ -78,7 +78,7 @@ document.getElementById("default-search")
                                         <p class="text-sm font-light text-gray-300">
                                             Harga Kulak
                                         </p>
-                                        <p class="text-m font-bold text-gray-900 dark:text-white">
+                                        <p class="text-m font-bold text-gray-900 ">
                                             <span class="text-sm">
                                                 Rp.
                                             </span>
