@@ -68,7 +68,7 @@ document.getElementById("default-search")
                                         <span class="text-sm">
                                             Rp.
                                         </span>
-                                        <span>`+element.sell_price+`</span>
+                                        <span class=" font-extrabold">`+element.sell_price+`</span>
                                         <span class="text-gray-300 text-xs">
                                             / `+element.unit+`
                                         </span>
