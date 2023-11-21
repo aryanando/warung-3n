@@ -35,7 +35,7 @@ document.getElementById("default-search")
     .addEventListener("input", (event) => {
         var inputValue = document.getElementById("default-search").value
         if (inputValue.length >= 3) {
-            axios.get('http://my-development-01.test/item/?name='+inputValue).then(res => {
+            axios.get('/item/?name='+inputValue).then(res => {
                 console.log(res.data);
                 if (res.data.data.length > 0) {
                     document.getElementById("item-container").innerHTML = ''
