@@ -40,7 +40,9 @@ class ItemController extends Controller
         ]);
 
         if (Item::create($validated)) {
-            return redirect(url('/item/add'));
+            return redirect(url('/dashboard'))->with(['status' => 'success', 'message' => 'Data Berhasil Ditambah']);
+        }else{
+            return redirect(url('/item/add'))->with(['status' => 'danger', 'message' => 'Data Gagal Ditambah']);
         }
     }
 
@@ -75,7 +77,9 @@ class ItemController extends Controller
         ]);
 
         if (Item::where('id',$id)->update($validated)) {
-            return redirect(url(''));
+            return redirect(url('/dashboard'))->with(['status' => 'success', 'message' => 'Data Berhasil Diubah']);
+        }else{
+            return redirect(url('/item/update/'.$id))->with(['status' => 'danger', 'message' => 'Data Gagal Diubah']);
         }
     }
 

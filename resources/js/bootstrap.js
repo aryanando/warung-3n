@@ -31,11 +31,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     enabledTransports: ['ws', 'wss'],
 // });
 
+
+
 document.getElementById("default-search")
     .addEventListener("input", (event) => {
         var inputValue = document.getElementById("default-search").value
         if (inputValue.length >= 3) {
-            axios.get('/item/?name='+inputValue).then(res => {
+            axios.get('/item/?name=' + inputValue).then(res => {
                 console.log(res.data);
                 if (res.data.data.length > 0) {
                     document.getElementById("item-container").innerHTML = ''
@@ -48,19 +50,19 @@ document.getElementById("default-search")
                                 <div class="flex flex-col justify-between h-full">
                                     <div class=" p-3 border rounded-xl">
                                         <span class="text-xl">
-                                            `+element.name+`
+                                            `+ element.name + `
                                         </span>
                                     </div>
                                     <div class=" p-3">
                                         <span class="text-xs ">
-                                            <a class="text-blue-600" href='/item/update/`+element.id+`'>Edit</a>
+                                            <a class="text-blue-600" href='/item/update/`+ element.id + `'>Edit</a>
                                         </span>
                                     </div>
                                     <div class="text-xs">
                                         <span class="mb-0 text-left text-gray-500 ">
                                             Last Update :
                                         </span>
-                                        <span>`+element.updated_at+`</span>
+                                        <span>`+ element.updated_at + `</span>
                                     </div>
                                 </div>
                                 <div class="flex flex-col justify-between h-full">
@@ -68,9 +70,9 @@ document.getElementById("default-search")
                                         <span class="text-sm">
                                             Rp.
                                         </span>
-                                        <span class=" font-extrabold">`+element.sell_price+`</span>
+                                        <span class=" font-extrabold">`+ element.sell_price + `</span>
                                         <span class="text-gray-300 text-xs">
-                                            / `+element.unit+`
+                                            / `+ element.unit + `
                                         </span>
                                     </p>
 
@@ -82,9 +84,9 @@ document.getElementById("default-search")
                                             <span class="text-sm">
                                                 Rp.
                                             </span>
-                                            <span>`+element.base_price+`</span>
+                                            <span>`+ element.base_price + `</span>
                                             <span class="text-sm text-gray-300">
-                                                / `+element.unit+`
+                                                / `+ element.unit + `
                                             </span>
                                         </p>
                                     </div>
@@ -94,12 +96,14 @@ document.getElementById("default-search")
                     </div> `)
                     });
 
-                }else{
+                } else {
                     document.getElementById("item-container").innerHTML = ''
                 }
             })
-        }else{
+        } else {
             document.getElementById("item-container").innerHTML = ''
         }
     });
+
+
 
