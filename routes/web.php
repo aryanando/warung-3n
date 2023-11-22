@@ -29,5 +29,6 @@ Route::middleware([
     Route::get('/item/add', [ItemController::class, 'create'])->name('item/add');
     Route::get('/item/update/{id}', [ItemController::class, 'edit'])->name('item/update');
     Route::post('/item/update/{id}', [ItemController::class, 'update']);
+    Route::delete('/item/delete/{id}', [ItemController::class, 'destroy']);
     Route::post('/item/insert', [ItemController::class, 'store']);
 });
