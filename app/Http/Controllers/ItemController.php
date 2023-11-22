@@ -52,7 +52,7 @@ class ItemController extends Controller
      */
     public function show(Request $request)
     {
-        $result = DB::table('items')->where('name', 'like', '%' . $request->get('name') . '%')->get();
+        $result = DB::table('items')->where('name', 'like', '%' . $request->get('name') . '%')->where('deleted_at', '=', NULL)->get();
         return Response()->json(['data' => $result]);
     }
 
@@ -87,8 +87,9 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Item $item)
+    public function destroy(Item $item, $id)
     {
-        //
+        $willDeleted = Item::find($id);
+        $willDeleted->delete();
     }
 }
