@@ -15,6 +15,10 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    @if (Route::current()->getName() == 'dashboard' || Route::current()->getName() == 'home')
+        @vite(['resources/js/search-item.js'])
+    @endif
+
     <!-- Styles -->
     @livewireStyles
 </head>
