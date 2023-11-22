@@ -12,7 +12,7 @@ document.getElementById("default-search")
                     items.forEach(element => {
                         console.log(dayjs().diff(dayjs(element.updated_at), 'day'))
                         var DateDiff = (dayjs().diff(dayjs(element.updated_at), 'day') > 0) ? dayjs().diff(dayjs(element.updated_at), 'day') + ` Days ago` : `Today`
-                        document.getElementById("item-container").innerHTML += (`<div class="mt-3">
+                        document.getElementById("item-container").innerHTML += (`<div class="mt-3" id="item-`+element.id+`">
                         <div
                             class="p-4 mx-auto text-center bg-white shadow h-36 w-96 ">
                             <div class="flex items-center justify-between h-full">
@@ -84,7 +84,11 @@ document.getElementById("default-search")
     });
 
 function destroyData(id) {
-    axios.delete('/item/delete/' + id).then(res => {})
+    axios.delete('/item/delete/' + id).then(res => {
+        document.getElementById('inpage-notif').classList.remove('hidden')
+        document.getElementById('inpage-notif-message').innerHTML += "Data berhasil dihapus"
+        document.getElementById('item-'+id).remove()
+    })
 }
 
 window.destroyData = destroyData;
