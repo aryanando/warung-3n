@@ -37,7 +37,7 @@ class ItemController extends Controller
             'name' => 'required|max:255',
             'base_price' => 'required',
             'sell_price' => 'required',
-            'unit' => 'required|min:3',
+            'unit' => 'required|min:2',
         ]);
 
         if (Item::create($validated)) {
